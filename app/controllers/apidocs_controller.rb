@@ -18,8 +18,13 @@ class ApidocsController < ActionController::API
 
     tag do
       key :name, 'Players'
-      key :description, 'Players API\'s'
+      key :description, 'Player API\'s'
     end
+    tag do
+      key :name, 'Reporting'
+      key :description, 'Reportings API\'s'
+    end
+
 
 
     key :host, 'localhost:3000'
@@ -38,6 +43,7 @@ class ApidocsController < ActionController::API
   # A list of all classes that have swagger_* declarations.
   SWAGGERED_CLASSES = [
       Api::V1::PlayersController,
+      Api::V1::ReportingsController,
 
       self
   ].freeze
