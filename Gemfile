@@ -55,4 +55,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
 
+# DB
+gem 'sqlite3'
 gem 'swagger-blocks'
+gem 'pry'
