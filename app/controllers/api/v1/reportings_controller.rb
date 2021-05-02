@@ -1,5 +1,7 @@
-class Api::V1::ReportingsController < Api::V1::BaseController
+require 'impact_report_factory'
 
+class Api::V1::ReportingsController < Api::V1::BaseController
+  include ImpactReportFactory
   include Swagger::Blocks
 
   swagger_path '/reportings/weekly' do
@@ -46,9 +48,13 @@ class Api::V1::ReportingsController < Api::V1::BaseController
     end
   end
   def impact
-    @players = Player.order_by_score.limit(10)
+    @players = Player.all
+    result = []
+    @players.each do |player|
+      result << ImpactReportFactory::PlayerReport.impact_object(player)
+    end
 
-    json_response(players: @players)
+    json_response(players: result)
   end
 
 
