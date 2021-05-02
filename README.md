@@ -7,7 +7,6 @@
 
 - Api Endpoints creation.
 - Swagger dashboard for Interaction.
-- User Authenticatioon
 
 ---
 
