@@ -43,3 +43,8 @@ yarn-debug.log*
 test/
 tmp/
 db/test.sqlite3
+
+app/.DS_Store
+.DS_Store
+
+db/development.sqlite3
